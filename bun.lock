@@ -4,9 +4,6 @@
   "workspaces": {
     "": {
       "name": "sendkit-workspace",
-      "devDependencies": {
-        "@types/node": "^26.1.1",
-      },
     },
     "packages/cli": {
       "name": "sendkit",
