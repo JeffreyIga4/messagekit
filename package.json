@@ -1,11 +1,9 @@
 {
-  "name": "messagekit",
-  "module": "index.ts",
+  "name": "sendkit-workspace",
+  "private": true,
   "type": "module",
-  "devDependencies": {
-    "@types/bun": "latest"
-  },
-  "peerDependencies": {
-    "typescript": "^5"
+  "workspaces": ["packages/*"],
+  "scripts": {
+    "dev:cli": "bun run packages/cli/src/index.ts"
   }
 }
