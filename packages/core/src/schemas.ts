@@ -26,8 +26,13 @@ export const telegramSendMessageResponseSchema = z.object({
 });
 
 
-export const telegramSendMessageOutputSchema = z.object({
+export const telegramMessageOutputSchema = z.object({
     ok: z.literal(true),
     chatId: z.string(),
     messageId: z.number(),
 });
+
+
+export type TelegramMessageInput = z.infer<typeof telegramMessageInputSchema>;
+export type TelegramMessageOptions = z.infer<typeof telegramMessageOptionsSchema>;
+export type TelegramMessageOutput = z.infer<typeof telegramMessageOutputSchema>;
