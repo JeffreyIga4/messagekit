@@ -10,6 +10,7 @@
       "version": "0.0.0",
       "dependencies": {
         "commander": "^15.0.0",
+        "sendkit-core": "workspace:*",
       },
       "devDependencies": {
         "@types/node": "^26.1.1",
