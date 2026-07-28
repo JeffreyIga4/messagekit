@@ -1,4 +1,4 @@
-import {Command} from "commander";
+import { Command } from "commander";
 import { sendTelegramMessage } from "sendkit-core";
 import { z } from "zod";
 import { homedir } from "node:os";
@@ -16,7 +16,7 @@ function writeTelegramBotToken(token: string) {
   writeFileSync(configPath, `${JSON.stringify({ telegramBotToken: token }, null, 2)}\n`, {
     mode: 0o600,
   });
-};
+}
 
 function getTelegramBotToken() {
   if (!existsSync(configPath)) {
@@ -31,12 +31,9 @@ function getTelegramBotToken() {
   }
 
   return token;
-};
+}
 
-
-program
-  .name("sendkit")
-  .description("SendKit CLI backed by sendkit-core")
+program.name("sendkit").description("SendKit CLI backed by sendkit-core");
 
 program
   .command("init")
@@ -46,7 +43,6 @@ program
     writeTelegramBotToken(options.telegramBotToken);
     console.log(`Saved SendKit CLI config to ${configPath}`);
   });
-
 
 program
   .command("telegram")
@@ -63,9 +59,9 @@ program
     console.log(JSON.stringify(result));
   });
 
-  await program.parseAsync(process.argv).catch((error: unknown) => {
-    console.error(error instanceof Error ? error.message : String(error));
-    process.exitCode = 1;
-  });
+await program.parseAsync(process.argv).catch((error: unknown) => {
+  console.error(error instanceof Error ? error.message : String(error));
+  process.exitCode = 1;
+});
 
-  // https://api.telegram.org/botREDACTED_TELEGRAM_BOT_TOKEN/getUpdates
+// https://api.telegram.org/botREDACTED_TELEGRAM_BOT_TOKEN/getUpdates

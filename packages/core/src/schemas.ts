@@ -7,31 +7,31 @@ export const telegramMessageInputSchema = z.object({
 });
 
 export const telegramMessageOptionsSchema = telegramMessageInputSchema.extend({
-    botToken: z.string().min(1, "Telegram bot token is required"),
+  botToken: z.string().min(1, "Telegram bot token is required"),
 });
 
 // what we send to the Telegram API
 export const telegramSendMessageRequestSchema = z.object({
-    chat_id: z.string().min(1),
-    text: z.string().min(1),
+  chat_id: z.string().min(1),
+  text: z.string().min(1),
 });
 
 // validation schema for the response we receive from the Telegram API
 export const telegramSendMessageResponseSchema = z.object({
-    ok: z.boolean(),
-    result: z.object({
-        message_id: z.number(),
-    }).optional(),
-    description: z.string().optional(),
+  ok: z.boolean(),
+  result: z
+    .object({
+      message_id: z.number(),
+    })
+    .optional(),
+  description: z.string().optional(),
 });
-
 
 export const telegramMessageOutputSchema = z.object({
-    ok: z.literal(true),
-    chatId: z.string(),
-    messageId: z.number(),
+  ok: z.literal(true),
+  chatId: z.string(),
+  messageId: z.number(),
 });
-
 
 export type TelegramMessageInput = z.infer<typeof telegramMessageInputSchema>;
 export type TelegramMessageOptions = z.infer<typeof telegramMessageOptionsSchema>;
