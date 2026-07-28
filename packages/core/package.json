@@ -1,5 +1,5 @@
 {
-  "name": "sendkit-core",
+  "name": "@caw-dev/sendkit-core",
   "version": "0.0.0",
   "private": true,
   "type": "module",
@@ -7,6 +7,9 @@
     ".": {
       "import": "./src/index.ts"
     }
+  },
+  "scripts": {
+    "build": "tsdown"
   },
   "dependencies": {
     "zod": "^4.4.3"
