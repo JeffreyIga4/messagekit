@@ -1,3 +1,4 @@
+#!/usr/bin/env node
 import { Command } from "commander";
 import { sendTelegramMessage } from "@caw-dev/sendkit-core";
 import { z } from "zod";
