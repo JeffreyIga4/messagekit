@@ -64,5 +64,3 @@ await program.parseAsync(process.argv).catch((error: unknown) => {
   console.error(error instanceof Error ? error.message : String(error));
   process.exitCode = 1;
 });
-
-// https://api.telegram.org/botREDACTED_TELEGRAM_BOT_TOKEN/getUpdates
